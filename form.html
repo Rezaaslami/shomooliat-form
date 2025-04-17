@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <title>فورم شمولیت</title>
+    <link rel="stylesheet" href="styel.css">
+  </head>
+  <body>
+    <div class="container">
+      <h2z>فورم شمولیت امتحان آزمایشی</h2z>
+      <form id="form" onsubmit="generateCard(event)">
+        <label>نام:</label> <input type="text" id="name" required />
+        <label>نام پدر:</label> <input type="text" id="fatherName" required />
+        <label>سال تولد:</label> <input type="text" id="birthYear" required />
+        <label>نمبر مسلسل:</label> <input type="text" id="serial" required />
+        <label>ولایت:</label> <input type="text" id="province" required />
+        <label>مکتب:</label> <input type="text" id="school" required />
+        <label>مرکز امتحان:</label> <input type="text" id="center" required />
+        <label>زمان امتحان:</label> <input type="text" id="time" required />
+        <label>آی‌دی:</label> <input type="text" id="id" required />
+        <button type="submit">نمایش کارت</button>
+      </form>
+    </div>
+    <script>
+      function generateCard(e) {
+        e.preventDefault();
+        const data = {
+          name: document.getElementById("name").value,
+          father: document.getElementById("fatherName").value,
+          birthYear: document.getElementById("birthYear").value,
+          serial: document.getElementById("serial").value,
+          province: document.getElementById("province").value,
+          school: document.getElementById("school").value,
+          center: document.getElementById("center").value,
+          time: document.getElementById("time").value,
+          id: document.getElementById("id").value,
+        };
+        localStorage.setItem("cardData", JSON.stringify(data));
+        window.location.href = "card.html";
+      }
+    </script>
+  </body>
+</html>

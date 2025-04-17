@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <title>کارت شمولیت</title>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+   
+    <link rel="stylesheet" href="styel.css">
+  </head>
+  <body>
+    <div class="card">
+      <div class="logo"><img style="width: 90px;" src="./1log.png" alt="لوگو" /></div>
+      <div class="tex" style="position: absolute; right: 70px; top: 9px; left: 100px;">
+      <h2>امارت اسلامی افغانستان</h2>
+      <h3>اداره ملی امتحانات</h3>
+      <h3>کارت شمولیت امتحان آزمایشی ولایت هرات</h3>
+      </div>
+      <table>
+        <tr>
+          <td>نام:</td>
+          <td id="name"></td>
+          <td>نمبر مسلسل:</td>
+          <td id="serial"></td>
+        </tr>
+        <tr>
+          <td>نام پدر:</td>
+          <td id="father"></td>
+          <td>سال تولد:</td>
+          <td id="birthYear"></td>
+        </tr>
+        <tr>
+          <td>ولایت:</td>
+          <td id="province"></td>
+          <td>مکتب:</td>
+          <td id="school"></td>
+        </tr>
+        <tr>
+          <td>مرکز امتحان:</td>
+          <td colspan="3" id="center"></td>
+        </tr>
+        <tr>
+          <td>زمان امتحان:</td>
+          <td colspan="3" id="time"></td>
+        </tr>
+        <tr>
+          <td>آی‌دی:</td>
+          <td colspan="3" id="idText"></td>
+        </tr>
+      </table>
+      <svg id="barcode"></svg>
+      <button class="btn" onclick="window.print()"><i class="animation"></i>چاپ کارت</button>
+    
+      <div class="note">
+        برای حل ورق جوابات، از قلم رنگ سیاه استفاده نمایید.
+      </div>
+    </div>
+    
+    <script>
+      const data = JSON.parse(localStorage.getItem("cardData"));
+      document.getElementById("name").textContent = data.name;
+      document.getElementById("father").textContent = data.father;
+      document.getElementById("birthYear").textContent = data.birthYear;
+      document.getElementById("serial").textContent = data.serial;
+      document.getElementById("province").textContent = data.province;
+      document.getElementById("school").textContent = data.school;
+      document.getElementById("center").textContent = data.center;
+      document.getElementById("time").textContent = data.time;
+      document.getElementById("idText").textContent = "P" + data.id;
+      JsBarcode("#barcode", "P" + data.id, {
+        format: "CODE128",
+        lineColor: "#000",
+        width: 2,
+        height: 50,
+        displayValue: false,
+      });
+    </script>
+  </body>
+</html>
