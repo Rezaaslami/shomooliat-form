@@ -43,3 +43,6 @@ All styling is managed through the `styel.css` file, which gives the form and th
 
 - Ensure JavaScript is enabled in the browser; otherwise, the form and card functionality won't work properly.
 - All data is handled on the client-side (browser); no server or database is involved.
+
+https://rezaaslami.github.io/shomooliat-form/
+
