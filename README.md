@@ -30,7 +30,7 @@ This page reads the saved form data from `localStorage` and displays it in a pri
 - Generates a barcode based on the user’s ID using **JsBarcode**
 - Includes a **Print Card** button
 - Shows an important note to guide students (e.g. "Use black pen on the answer sheet")
-
+...
 ## 🎨 Styling
 
 All styling is managed through the `styel.css` file, which gives the form and the card a clean, presentable design.
