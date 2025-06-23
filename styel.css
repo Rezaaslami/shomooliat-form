@@ -141,3 +141,21 @@ border-radius: 5px;
 
 /* ختم فورم */
 
+/*
+
+input,
+select {
+width: 100%;
+padding: 8px;
+margin-top: 5px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+button {
+margin-top: 20px;
+background: #007b5e;
+color: #fff;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+}*/
